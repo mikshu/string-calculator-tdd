@@ -1,8 +1,11 @@
 // stringCalculator.js
 function add(numbers) {
+  // return 0 if input is an empty string
   if (numbers === "") return 0;
-
-  const numArr = numbers.split(",");
+  //replace new line with a comma
+  const normalizedNumbers = numbers.replace(/\n/g, ",");
+  //make an array of numbers
+  const numArr = normalizedNumbers.split(",");
   return numArr.reduce((sum, num) => sum + parseInt(num), 0);
 }
 
